@@ -21,11 +21,11 @@ for sheet in csvLists:
 
     data = obj.get()['Body'].read()
 
-    data = unicode(data, "utf-8")
+    data = unicode(data, "utf-8") #convert unicode data into utf-8 encoded data
 
-    data = io.StringIO(data)
+    data = io.StringIO(data) #convert teh utf-8 coded data into a valid string
 
-    data = pd.read_csv(data)
+    data = pd.read_csv(data) # reading the data string using Pandas
     
     courseId = sheet.split('/')[1].split('_')
 
